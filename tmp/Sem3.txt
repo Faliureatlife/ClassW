@@ -1,0 +1,16 @@
+// Run this program through the Oz interpreter by calling
+//    runFull "declarative" "Sem3.txt" "Sem3.out"
+// Explain the resulting store
+
+local P1 P2 K1 K2 A1 A2 A3 A4 DB1 DB2 F1 F2 F3 F4 in
+	P1 = person(kid:K1 age:A1 dob:DB1 food:F3)
+	P2 = person(kid:K2 age:A2 dob:DB2 food:F4)
+	K1 = kid(age:A3 food:F1)
+	K2 = kid(age:A4 food:F2)
+	A3 = 12
+	F2 = spaghetti
+	A1 = 54
+	DB2 = 1978
+	P1 = P2
+    skip Full
+end

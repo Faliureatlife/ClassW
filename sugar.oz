@@ -1,0 +1,149 @@
+1)
+
+local A B in 
+  A = false()
+  local B1 in
+    if B1 then
+      skip Browse A
+    else 
+      if B then
+        skip Basic
+      else 
+        skip Basic
+      end
+    end
+  end
+
+  case A of tree() then 
+    skip Basic
+  else 
+    case A of false() then 
+      skip Basic
+    else
+      case A of true() then
+        skip Basic
+      else 
+        skip Basic
+      end
+    end
+  end
+end
+
+2)
+local A in 
+  A = 2
+  local B1 in 
+    local B2 in
+     B2 = 1
+     {Eq A B2 B1}
+    end 
+    if B1 then 
+      skip Basic
+    else 
+      skip Basic
+    end 
+  end
+  local C1 in
+    local C2 in
+      local C3 C4 in 
+       C3 = 1
+       C4 = 3
+       {IntMinus C4 C3 C2}
+      end
+      {Eq A C2 C1}
+    end
+    if C1 then 
+      skip Browse A
+    else 
+      skip Basic 
+    end
+  end
+end
+
+3)
+
+local X Y in 
+  local T in 
+    local A IntMinus
+      A = 3
+      T = tree(1:A1 2:T)
+    end
+    local A B T1 in 
+      T1 = tree(1:A 2:B)
+      T1 = T 
+      local B0 in 
+        local B1 B2 in 
+          B1 = 1
+          B2 = 2
+          {Eq B1 B2 B0}
+        end 
+        if B0 then
+          local B in 
+            local C1 C2 in 
+              C1 = 5
+              C2 = 2
+              {IntMinus C1 C2 B}
+            end
+            skip Browse B
+          end
+        end
+      else 
+        skip Basic
+      end
+    end
+  end
+end
+
+local Fun R in 
+  Fun = proc {$ X A} in 
+    A = X
+  end
+  local A in 
+    A = 4
+    {Fun A R}
+  end
+  skip Browse R
+end 
+
+local A B in 
+  skip Basic 
+  local A1 A2 in 
+    A1 = 4
+    A2 = '#'(1:B 2:B)
+    A = rdc(1:A1 2:B 3:A2)
+  end
+  local A1 A2 in 
+    A1 = 5
+    local B1 B2 in 
+      B1 = 3
+      B2 = 4
+      {IntMinus B1 B2 A2}
+    end 
+    {IntPlus A1 A2 B}
+  end
+  skip Browse A
+  skip Browse B 
+  skip Store
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

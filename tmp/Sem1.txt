@@ -1,0 +1,19 @@
+// Run this program through the Oz interpreter by calling
+//    runFull "declarative" "Sem1.txt" "Sem1.out"
+// Explain the resulting store
+
+local X in
+  local Y in
+    X = 1
+    Y = pair(1:X 2:X)
+    case Y of pair(1:Z 2:W) then 
+      local S in 
+        {IntPlus Z W S}
+        skip Full
+      end
+      else
+        skip Basic
+    end
+  end
+end
+

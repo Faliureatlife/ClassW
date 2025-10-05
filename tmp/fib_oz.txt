@@ -1,0 +1,20 @@
+// Haskell version of a variation on fib:
+//    fib :: Integer -> Integer
+//    fib 0 = 1
+//    fib 1 = 2
+//    fib n = fib (n-1) + fib (n-2)
+//
+// Rewrite fib in Oz kernel syntax using the template below, including
+// a "skip Stack" command added to the first base case (n=0), using the 
+// primitive operations {Eq X Y B}, {IntMinus X Y A}, and {IntPlus X Y A}.
+// 
+// Run this file through the Oz interpreter by calling
+//    runFull "declarative" "fib_oz.txt" "fib_oz.out"
+// in ghci and give a brief explanation of each of the stack outputs.
+
+local X Result ... in
+  ... 
+  X = 4
+  {Fib X Result}
+  skip Browse Result
+end
