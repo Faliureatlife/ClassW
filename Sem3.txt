@@ -1,6 +1,18 @@
 // Run this program through the Oz interpreter by calling
 //    runFull "declarative" "Sem3.txt" "Sem3.out"
 // Explain the resulting store
+//1-7 are the Primitives
+//(8,9) are the values holding P1, which itself holds 
+// refs to 10-11(kid(age@14, food@18)) 12-13(age), 16-17(DOB), 20-21(Unbound)
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 local P1 P2 K1 K2 A1 A2 A3 A4 DB1 DB2 F1 F2 F3 F4 in
 	P1 = person(kid:K1 age:A1 dob:DB1 food:F3)

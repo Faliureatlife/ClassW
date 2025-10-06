@@ -1,8 +1,7 @@
-1)
-
 local A B in 
   A = false()
   local B1 in
+    B1 = true()
     if B1 then
       skip Browse A
     else 
@@ -13,7 +12,6 @@ local A B in
       end
     end
   end
-
   case A of tree() then 
     skip Basic
   else 
@@ -28,8 +26,6 @@ local A B in
     end
   end
 end
-
-2)
 local A in 
   A = 2
   local B1 in 
@@ -46,9 +42,9 @@ local A in
   local C1 in
     local C2 in
       local C3 C4 in 
-       C3 = 1
-       C4 = 3
-       {IntMinus C4 C3 C2}
+        C3 = 1
+        C4 = 3
+        {IntMinus C4 C3 C2}
       end
       {Eq A C2 C1}
     end
@@ -59,14 +55,11 @@ local A in
     end
   end
 end
-
-3)
-
 local X Y in 
   local T in 
-    local A IntMinus
+    local A in
       A = 3
-      T = tree(1:A1 2:T)
+      T = tree(1:A 2:T)
     end
     local A B T1 in 
       T1 = tree(1:A 2:B)
@@ -74,7 +67,7 @@ local X Y in
       local B0 in 
         local B1 B2 in 
           B1 = 1
-          B2 = 2
+          B2 = 1
           {Eq B1 B2 B0}
         end 
         if B0 then
@@ -86,14 +79,12 @@ local X Y in
             end
             skip Browse B
           end
-        end
-      else 
+        else 
         skip Basic
       end
     end
   end
 end
-
 local Fun R in 
   Fun = proc {$ X A} in 
     A = X
@@ -104,7 +95,6 @@ local Fun R in
   end
   skip Browse R
 end 
-
 local A B in 
   skip Basic 
   local A1 A2 in 
@@ -125,25 +115,4 @@ local A B in
   skip Browse B 
   skip Store
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+end

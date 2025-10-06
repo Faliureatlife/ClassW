@@ -1,0 +1,120 @@
+local A B in
+  A = false()
+  local EXU1 in
+    EXU1 = true()
+    if EXU1 then
+      skip Browse A
+    else
+      if B then
+        skip Basic
+      else
+        skip Basic
+      end
+    end
+  end
+  case A of tree() then
+    skip Basic
+  else
+    case A of false() then
+      skip Basic
+    else
+      case A of true() then
+        skip Basic
+      else
+        skip Basic
+      end
+    end
+  end
+end
+local A in
+  A = 2
+  local EXU1 in
+    local EXU2 in
+      EXU2 = 1
+      {Eq A EXU2 EXU1}
+    end
+    if EXU1 then
+      skip Basic
+    else
+      skip Basic
+    end
+  end
+  local EXU2 in
+    local EXU3 in
+      local EXU5 EXU6 in
+        EXU5 = 3
+        EXU6 = 1
+        {IntMinus EXU5 EXU6 EXU3}
+      end
+      {Eq A EXU3 EXU2}
+    end
+    if EXU2 then
+      skip Browse A
+    else
+      skip Basic
+    end
+  end
+end
+local X Y in
+  local T in
+    local EXU1 in
+      EXU1 = 3
+      T = tree(1:EXU1 2:T)
+    end
+    local A B PTU0 in
+      PTU0 = tree(1:A 2:B)
+      PTU0 = T
+      local EXU1 in
+        local EXU2 EXU3 in
+          EXU2 = 1
+          EXU3 = 1
+          {Eq EXU2 EXU3 EXU1}
+        end
+        if EXU1 then
+          local Z in
+            local B in
+              local EXU1 EXU2 in
+                EXU1 = 5
+                EXU2 = 2
+                {IntMinus EXU1 EXU2 B}
+              end
+              skip Browse B
+            end
+          end
+        else
+          skip Basic
+        end
+      end
+    end
+  end
+end
+local Fun R in
+  Fun = proc {$ X EXU2 } in
+    EXU2 = X
+  end
+  local EXU2 in
+    EXU2 = 4
+    {Fun EXU2 R}
+  end
+  skip Browse R
+end
+local A B in
+  skip Basic
+  local EXU2 EXU4 in
+    EXU2 = 4
+    EXU4 = '#'(1:B 2:B)
+    A = rdc(1:EXU2 2:B 3:EXU4)
+  end
+  local EXU2 EXU3 in
+    EXU2 = 5
+    local EXU5 EXU6 in
+      EXU5 = 3
+      EXU6 = 4
+      {IntMinus EXU5 EXU6 EXU3}
+    end
+    {IntPlus EXU2 EXU3 B}
+  end
+  skip Browse A
+  skip Browse B
+  skip Store
+end
